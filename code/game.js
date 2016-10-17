@@ -3,6 +3,7 @@ var actorChars = {
   "@": Player,
   "o": Coin, // A coin will wobble up and down
   "=": Lava, "|": Lava, "v": Lava  
+  "y": Floater
 };
 
 function Level(plan) {
@@ -38,6 +39,9 @@ function Level(plan) {
       // Because there is a third case (space ' '), use an "else if" instead of "else"
       else if (ch == "!")
         fieldType = "lava";
+      // for character y
+      else if (ch == "y")
+      	fieldType = "floater"
 
       // "Push" the fieldType, which is a string, onto the gridLine array (at the end).
       gridLine.push(fieldType);
